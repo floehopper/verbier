@@ -1,1 +1,18 @@
 <h1>Pistes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pistes.each do |piste| %>
+      <tr>
+        <td><%= piste.name %></td>
+        <td><%= piste.latest_state %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306230011) do
+ActiveRecord::Schema.define(version: 20160306230532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,4 +22,14 @@ ActiveRecord::Schema.define(version: 20160306230011) do
     t.datetime "updated_at"
   end
 
+  create_table "samples", force: :cascade do |t|
+    t.integer  "piste_id"
+    t.integer  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "samples", ["piste_id"], name: "index_samples_on_piste_id", using: :btree
+
+  add_foreign_key "samples", "pistes"
 end

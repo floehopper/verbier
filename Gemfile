@@ -4,6 +4,7 @@ ruby '2.2.4'
 
 gem 'capybara'
 gem 'pg'
+gem 'htmlentities'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'

@@ -29,7 +29,7 @@ require 'csv'
 
 namespace :export do
   task samples: :environment do
-    CSV.new($stdout) do |csv|
+    CSV do |csv|
       csv << ['piste.name', 'piste.created_at', 'piste.updated_at', 'sample.state', 'sample.created_at', 'sample.updated_at']
       Sample.joins(:piste).find_each do |sample|
         piste = sample.piste

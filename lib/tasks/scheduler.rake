@@ -30,8 +30,10 @@ require 'csv'
 namespace :export do
   task samples: :environment do
     CSV do |csv|
+      samples = Sample.includes(:piste).all.to_a
+      Rails.logger.info '>>>'
       csv << ['piste.name', 'piste.created_at', 'piste.updated_at', 'sample.state', 'sample.created_at', 'sample.updated_at']
-      Sample.joins(:piste).find_each do |sample|
+      samples.each do |sample|
         piste = sample.piste
         csv << [piste.name, piste.created_at, piste.updated_at, sample.state, sample.created_at, sample.updated_at]
       end

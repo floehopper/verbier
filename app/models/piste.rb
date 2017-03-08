@@ -6,6 +6,6 @@ class Piste < ActiveRecord::Base
   end
 
   def latest_state
-    latest_sample.state
+    latest_sample && latest_sample.state
   end
 end

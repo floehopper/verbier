@@ -10,7 +10,7 @@
   <tbody>
     <% @pistes.each do |piste| %>
       <tr>
-        <td><%= @coder.encode(piste.name, :named).html_safe %></td>
+        <td><%= @coder.encode(piste.name, :named).html_safe %> (<%= piste.grade %>)</td>
         <td><%= piste.latest_state %></td>
       </tr>
     <% end %>

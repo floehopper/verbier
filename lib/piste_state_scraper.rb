@@ -7,8 +7,8 @@ class PisteStateScraper
     nodes = Capybara.string(response)
 
     content = nodes.all('.block')[5].first('.content')
-    content.all('td').each_slice(2) do |state, piste|
-      if img = state.first('img')
+    content.all('td').each_slice(3) do |state, colour, piste|
+      if (img = state.first('img')) && piste.text.present?
         gif = File.basename(img['src'], '.gif')
         yield piste.text, GIF_VS_STATE[gif]
       end

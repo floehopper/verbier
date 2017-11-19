@@ -5,6 +5,7 @@ ruby '2.2.4'
 gem 'capybara'
 gem 'pg'
 gem 'htmlentities'
+gem 'puma'
 
 gem 'rails', '~> 4.2.7.1'
 

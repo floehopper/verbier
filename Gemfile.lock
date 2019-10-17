@@ -129,7 +129,7 @@ DEPENDENCIES
   rails_12factor
 
 RUBY VERSION
-   ruby 2.2.4p230
+   ruby 2.2.10p489
 
 BUNDLED WITH
    1.17.3

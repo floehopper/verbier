@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.2.10'
 
 gem 'capybara'
 gem 'pg'
